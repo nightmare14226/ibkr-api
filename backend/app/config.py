@@ -3,13 +3,8 @@ from pydantic import BaseModel
 
 
 class Settings(BaseModel):
-    # Interactive Brokers connection
-    ib_host: str = os.getenv("IB_HOST", "127.0.0.1")
-    ib_port: int = int(os.getenv("IB_PORT", "7497"))  # Paper: 7497, Live: 7496 (default)
-    ib_client_id: int = int(os.getenv("IB_CLIENT_ID", "123"))
-
-    # API security
-    api_key: str = os.getenv("API_KEY", "change-me")
+    # IB Client Portal Gateway URL
+    ib_gateway_url: str = os.getenv("IB_GATEWAY_URL", "https://localhost:5000/v1/api")
 
     # CORS
     allowed_origins: str = os.getenv("ALLOWED_ORIGINS", "*")

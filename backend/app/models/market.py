@@ -32,21 +32,3 @@ class BarRecord(BaseModel):
     barCount: Optional[int] = None
     wap: Optional[float] = None
 
-
-class PositionRecord(BaseModel):
-    account: str
-    conId: int
-    symbol: str
-    secType: str
-    exchange: Optional[str] = None
-    currency: str
-    position: float
-    avgCost: Optional[float] = None
-
-
-class PnLRecord(BaseModel):
-    account: str
-    UnrealizedPnL: Optional[float] = None
-    RealizedPnL: Optional[float] = None
-    NetLiquidation: Optional[float] = None
-
