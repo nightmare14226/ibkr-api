@@ -10,6 +10,18 @@ from .portfolio import (
     AccountSummaryRecord,
     AccountLedgerRecord,
 )
+from .contract import (
+    TradingSession,
+    TradingTimes,
+    TradingScheduleItem,
+    TradingScheduleResponse,
+    SecdefRequest,
+    SecdefSearchRequest,
+    SecdefRecord,
+    IncrementRules,
+    StrikesResponse,
+    ContractRulesRequest,
+)
 
 __all__ = [
     "SymbolRecord",
@@ -20,5 +32,15 @@ __all__ = [
     "PnLRecord",
     "AccountSummaryRecord",
     "AccountLedgerRecord",
+    "TradingSession",
+    "TradingTimes",
+    "TradingScheduleItem",
+    "TradingScheduleResponse",
+    "SecdefRequest",
+    "SecdefSearchRequest",
+    "SecdefRecord",
+    "IncrementRules",
+    "StrikesResponse",
+    "ContractRulesRequest",
 ]
 

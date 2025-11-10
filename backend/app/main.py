@@ -5,6 +5,7 @@ from dotenv import load_dotenv
 from .config import settings
 from .routers.market import router as market_router
 from .routers.portfolio import router as portfolio_router
+from .routers.contract import router as contract_router
 
 
 # Load environment variables from .env if present
@@ -33,5 +34,6 @@ def health():
 
 app.include_router(market_router)
 app.include_router(portfolio_router)
+app.include_router(contract_router)
 
 
