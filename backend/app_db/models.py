@@ -137,5 +137,6 @@ class Position(Base):
     name: Mapped[str] = mapped_column(String(200))
 
     pe_ratio: Mapped[Optional[float]] = mapped_column(Float, nullable=True)
+    description: Mapped[Optional[str]] = mapped_column(String(500), nullable=True)
 
     portfolio: Mapped[Portfolio] = relationship(back_populates="positions")

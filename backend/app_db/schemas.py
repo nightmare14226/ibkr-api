@@ -28,6 +28,7 @@ class PositionBase(BaseModel):
     equity_risk_profile: Optional[str] = None
     name: str
     pe_ratio: Optional[float] = None
+    description: Optional[str] = None
 
 
 class PositionCreate(PositionBase):
