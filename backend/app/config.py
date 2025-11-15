@@ -12,6 +12,13 @@ class Settings(BaseModel):
     # General
     timezone: str = os.getenv("TIMEZONE", "UTC")
 
+    # API authentication
+    api_username: str = os.getenv("API_USERNAME", "admin")
+    api_password: str = os.getenv("API_PASSWORD", "changeme")
+
+    # Database
+    database_url: str = os.getenv("DATABASE_URL", "sqlite+aiosqlite:///./ares.db")
+
 
 settings = Settings()
 
