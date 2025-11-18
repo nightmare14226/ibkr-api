@@ -7,6 +7,7 @@ from sqlalchemy.orm import Session
 from ..database import get_db
 from ..models import Portfolio, Position
 from ..schemas import PortfolioCreate, PortfolioRead
+from ..utils import get_account_header_from_meta_and_ledger
 
 router = APIRouter(prefix="/portfolios", tags=["portfolios"])
 
@@ -65,3 +66,14 @@ def delete_portfolio(portfolio_id: int, db: Session = Depends(get_db)):
     db.delete(portfolio)
     db.commit()
     return
+
+@router.get("/live/{account_id}", response_model=PortfolioRead)
+def get_live_portfolio(account_id: str):
+    portfolio = get_live_portfolio(account_id)
+    if not portfolio:
+        raise HTTPException(status_code=404, detail="Portfolio not found")
+    return portfolio
+
+def get_live_summary(account_id: str):
+    header = get_account_header_from_meta_and_ledger(account_id)
+    
